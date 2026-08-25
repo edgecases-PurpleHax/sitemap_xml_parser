@@ -20,9 +20,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install pytest pytest-cov ruff
+        run: pip install pytest pytest-cov ruff
       - name: Lint with ruff
         run: ruff check --output-format=json --output-file=ruff-report.json .
         continue-on-error: true
